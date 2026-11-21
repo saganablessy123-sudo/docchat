@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocChat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>DocChat</h1>
+      <p class="tagline">Chat with your PDFs</p>
+
+      <form id="uploadForm">
+        <label class="file-btn">
+          <input type="file" id="fileInput" accept=".pdf,.txt" hidden />
+          <span id="fileLabel">Choose PDF or TXT</span>
+        </label>
+        <button type="submit" id="uploadBtn">Upload</button>
+      </form>
+      <p id="uploadStatus" class="status"></p>
+
+      <h2>Documents</h2>
+      <ul id="docList" class="doc-list"></ul>
+
+      <label class="filter">
+        Ask about:
+        <select id="docFilter">
+          <option value="">All documents</option>
+        </select>
+      </label>
+    </aside>
+
+    <main class="chat">
+      <div id="messages" class="messages">
+        <div class="msg bot">Upload a document on the left, then ask me anything about it.</div>
+      </div>
+
+      <form id="askForm" class="ask-form">
+        <input type="text" id="question" placeholder="Ask a question..." autocomplete="off" />
+        <button type="submit" id="askBtn">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
